@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.tailwindcss.com/tailwind.min.css">
+  <link rel="stylesheet" href="{% block stylesheet %}{% endblock %}">
+  <link rel="stylesheet" href="/static/style1.css">
+  <title>{% block title %}Base{% endblock %}</title>  
+</head>
+<body class="{% block bodycolor %}{% endblock %}">
+  <nav class="customNav">
+    <header class="text-gray-400 bg-gray-900 body-font">
+      <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
+          {% if user.is_authenticated %}
+          <a class="mr-5 hover:text-white" href="/go-to-home" id="homeBtn" onclick="homeSelect()">Home</a>
+          <a class="mr-5 hover:text-white" href="/go-to-contact" id="contactBtn">Contact Us</a>
+          {% else %}
+          <a class="mr-5 hover:text-white"href="/login-page" id="aboutBtn">Sign In</a>
+          <a class="hover:text-white" href="/register" id="contentBtn">Register</a>
+          {% endif %}
+        </nav>
+        <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-white lg:items-center lg:justify-center mb-4 md:mb-0">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+          <span class="ml-3 text-xl xl:block lg:hidden">Aqua</span>
+        </a>
+        <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
+          {% if user.is_authenticated %}
+          <form action="/logout">
+            <button class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">LOGOUT
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </form>
+          {% endif %}
+        </div>
+      </div>
+    </header>
+  </nav>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+    {% if category =='danger' %}
+    <div role="alert">
+      <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2">
+        Error Occurred
+      </div>
+      <div class="border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700" role="alert">
+        <p>{{ message }}</p>
+      </div>
+    </div>
+    {% else %}
+    <div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md" role="alert">
+      <div class="flex">
+        <div class="py-1"><svg class="fill-current h-6 w-6 text-teal-500 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"/></svg></div>
+        <div>
+          <p class="font-bold">Success!!</p>
+          <p class="text-sm">{{ message }}</p>
+        </div>
+      </div>
+    </div>   
+    {% endif %}
+    {% endfor %}
+  {% endif %}
+  {% endwith %}
+
+  <div>
+    {% block content %}{% endblock %}
+  </div>
+  <script src="{% block script %}{% endblock %}"></script>
+  <script src="{% block script1 %}{% endblock %}"></script>
+</body>
+</html>
