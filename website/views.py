@@ -17,3 +17,7 @@ def go_to_contact():
 @views.route('/devices-story')
 def devices_story():
   return render_template('devices_story.html', user=current_user)
+
+@views.route('/')
+def intro():
+  return render_template('intro.html', user=current_user)

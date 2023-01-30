@@ -1,0 +1,83 @@
+.spacer{
+    aspect-ratio: 960/300;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.layer{
+    background-image: url('/static/data2.svg');
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.flip{
+    transform: rotate(180deg);
+}
+
+section.ut{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+}
+
+section.ut h1{
+    font-weight: bolder;
+    font-size: 2.5rem;
+}
+
+.cent{
+    text-align: center;
+}
+
+.itemsBlob{
+    position: absolute;
+    padding: 0 10rem;
+}
+
+p.custom{
+    font-size: x-large;
+    font-family: sans-serif;
+}
+
+.itemsBlob h1{
+    font-family: sans-serif;
+    color: rgb(220, 182, 255);
+}
+
+p.custom span{
+    color: rgb(255, 151, 255);
+    font-weight: bold;
+}
+
+.register{
+    font-size: 2rem;
+    border: 0;
+    border-radius: 15px;
+    padding: 10px;
+    background: rgba(184, 133, 255, 0.493);
+    box-shadow: 0 0 15px;
+    color: black;
+
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+}
+
+.register:hover{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    border: 2px rgb(225, 105, 0) solid;
+    border-radius: 50px;
+    padding: 30px;
+    background: purple;
+    box-shadow: 0 0 15px black;
+    color: white;
+}
