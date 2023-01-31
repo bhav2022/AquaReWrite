@@ -1,6 +1,6 @@
 .spacer{
     aspect-ratio: 960/300;
-    width: 100%;
+    width: aut;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -38,8 +38,9 @@ section.ut h1{
 }
 
 .itemsBlob{
+    min-height: fit-content;
     position: absolute;
-    padding: 0 10rem;
+    max-width: 700px;
 }
 
 p.custom{
@@ -80,4 +81,83 @@ p.custom span{
     background: purple;
     box-shadow: 0 0 15px black;
     color: white;
+    }
+
+*{
+    margin:0;
+    padding:0;
+    font-family:verdana;
+    opacity: 100%;
+  }
+  #abc{
+    width:100%;
+    top: 0;
+  }
+  nav{
+    width: 100%;
+    min-height: 50px;
+    background-color: rgba(0, 0, 0);
+    line-height: 50px;
+  }
+  nav ul{
+    float: right;
+    margin-right: 30px;
+  }
+  nav ul li{
+    list-style-type: none;
+    display: inline-block;
+    transition: 0.3s all;
+  }
+  nav ul li:hover{
+    background-color:#088;
+  }
+  nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    padding: 30px;
+  }
+
+div.sep1 {
+  background: url(/static/data3.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: xx-large;
+  font-weight: 900;
+  min-height: 960px;
+}
+
+div.sep1 h1{
+  background-color: aquamarine;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 0 15px;
+}
+
+@media only screen and (max-width: 480px) {
+  html, body{
+    width: 100%;
+    height: fit-content;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;  
+  }
+
+  svg#visual{
+      max-width: 50rem;
+  }
+
+  div.sep1{
+    min-width: 540px;
+    background: url(/static/data3_p.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: xx-large;
+    font-weight: 900;
+  }
+
+  div.sep1 h1{
+    text-align: left;
+    max-width: 100%;
+
+  }
 }
