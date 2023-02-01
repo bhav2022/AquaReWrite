@@ -41,3 +41,16 @@ h1.heading{
 .para3{
     text-align: justify;
 }
+
+div.comment-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    min-height: 200px;
+}
+
+#comment-input{
+    max-width: 900px;
+}
