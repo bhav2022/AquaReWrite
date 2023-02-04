@@ -46,11 +46,77 @@ div.comment-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: left;
     max-width: 100%;
     min-height: 200px;
 }
 
 #comment-input{
+    width: 900px;
+    padding-inline: 20px 15px;
+    scroll-padding-top: 15px;
+    background-color: rgb(47, 0, 134);
+    border-radius: 5px;
+}
+
+#comment-input::-webkit-scrollbar{
+    display: hidden;
+}
+
+h1.discussions-heading{
+    font-size: 2rem;
+    margin: 20px 0;
+}
+
+div.comment-input button{
+    background-color: green;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 7px;
+    font-weight: 600;
+    transition-timing-function: ease-in;
+    transition-duration: 0.2s;
+}
+
+div.comment-input button:hover{
+    background-color: rgb(1, 60, 1);
+}
+
+div.comment-input textarea{
+    font-size: larger;
+}
+
+div.comment-input textarea:focus{
+    outline: none !important;
+    border: 2px solid salmon;
+}
+
+div.comments{
+    display: flex;
+    flex-direction: column;
+    border: 2px salmon solid;
+    border-radius: 10px;
+    margin-top: 20px;
     max-width: 900px;
+    box-shadow: 0 0 10px black;
+}
+
+div.comments div{
+    margin: 5px;
+    max-width: 900px;
+    border: grey 2px solid;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+div.comments div::before{
+    content: "  ";
+    border-left: 2px salmon solid;
+    white-space: pre;
+}
+
+@media only screen and (max-width: 480px) {
+    #comment-input{
+        width: 320px;
+    }
 }

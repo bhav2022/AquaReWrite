@@ -1,4 +1,4 @@
-{% extends "base.html" %}{% block title %}Device Stories{% endblock %}{% block stylesheet %}/static/style3.css{% endblock %}{% block content %}
+{% extends "base.html" %}{% block title %}Device Stories{% endblock %}{% block stylesheet %}/static/style3.css{% endblock %}{% block headScript1 %}https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js{% endblock %}{% block headScript2 %}https://www.gstatic.com/firebasejs/7.17.2/firebase-database.js{% endblock %}{% block content %}
 <main class="dark:bg-gray-900 dark:text-white">
     <div class="flex justify-between px-4 mx-auto max-w-screen-xl ">
         <article class="py-4 mt-4x">
@@ -53,7 +53,14 @@ The advancements in technology have made it possible to have more powerful and v
             <div class="comment-container">
                 <h1 class="discussions-heading">Discussions</h1>
                 <div class="comment-input">
-                    <textarea name="comment" id="comment-input" style="overflow-y: scroll;"></textarea>
+                    <form method="POST">
+                        <textarea name="comment" id="comment-input" placeholder="Your message here..." style="overflow-y: hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~Written by {{user.first_name}}</textarea><br>
+                        <button type="submit" class="submitComment" onclick="append()" spellcheck="true" id="submit-comment">Post Comment!!</button>
+                    </form>
+                </div>
+                <div class="comments" id="comments-container">
+                    <!-- The Discussions take place here. -->
+                    <div>Hi</div>
                 </div>
             </div>
         </article>
@@ -276,4 +283,5 @@ The advancements in technology have made it possible to have more powerful and v
         </div>
     </div>
   </footer>
+  {% block script %}/static/script3.js{% endblock %}
 {% endblock %}

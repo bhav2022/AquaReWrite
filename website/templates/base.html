@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="https://cdn.tailwindcss.com/tailwind.min.css">
   <link rel="stylesheet" href="{% block stylesheet %}{% endblock %}">
   <link rel="stylesheet" href="/static/style1.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="{% block headScript1 %}{% endblock %}"></script>
+  <script src="{% block headScript2 %}{% endblock %}"></script>
   <title>{% block title %}Base{% endblock %}</title>  
 </head>
 <body class="{% block bodycolor %}{% endblock %}">
