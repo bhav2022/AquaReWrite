@@ -11,12 +11,7 @@
         <div id="abc" style="background-color: black">
             <nav>
                 <ul>
-                    {% if user.is_authenticated %}
-                    <li><a href="/go-to-home">Home</a></li>
-                    {% else %}
-                    <li><a href="/login-page">Log In</a></li>
-                    <li><a href="/register">Register</a></li>
-                    {% endif %}
+                    <li><a href="/login-page">Log In/Register</a></li>
                     <li><a href="/go-to-contact">Contact Us</a></li>
                 </ul>
             </nav>

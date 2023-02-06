@@ -1,19 +1,23 @@
+import os
+
 from flask import Blueprint, render_template
-from flask_login import login_required, current_user
+
+from website import login_is_required
 
 views = Blueprint('views', __name__)
 
+os.environ["OAUTH_INSECURE_TRANSPORT"] = "1"
 
+@login_is_required
 @views.route('/go-to-home')
-@login_required
 def go_to_home():
-  return render_template('home.html', user=current_user)
+  return render_template('home.html')
 
 
 @views.route('/go-to-contact')
 def go_to_contact():
-  return render_template('contact.html', user=current_user)
+  return render_template('contact.html')
 
 @views.route('/')
 def intro():
-  return render_template('intro.html', user=current_user)
+  return render_template('intro.html')

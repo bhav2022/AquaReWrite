@@ -1,3 +1,5 @@
+// Not Working for now
+
 const submitComment = document.getElementById("submit-comment");
 const commentInput = document.getElementById("comment-input");
 const commentsContainer = document.getElementById("comments-container");
