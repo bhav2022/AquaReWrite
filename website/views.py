@@ -1,6 +1,6 @@
 import os
 
-from flask import Blueprint, render_template, session
+from flask import Blueprint, render_template, session, send_file
 from website import login_is_required
 
 views = Blueprint('views', __name__)
@@ -22,3 +22,7 @@ def go_to_contact():
 @views.route('/')
 def intro():
     return render_template('intro.html')
+
+@views.route('/privacy')
+def privacy():
+    return send_file('static/Policies/AquaReWrite Privacy Policies.pdf')
