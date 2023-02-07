@@ -19,6 +19,8 @@ def login():
     autherization_url, state = flow.authorization_url()
     session["state"] = state
     return redirect(autherization_url)
+
+
 @login_is_required
 @auth.route('/logout')
 def logout():
