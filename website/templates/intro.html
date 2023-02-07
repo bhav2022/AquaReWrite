@@ -8,20 +8,28 @@
     <script src="https://cdn.jsdelivr.net/npm/kute.js@2.2.4/dist/kute.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 <body class="body" bgcolor="210021">
-        <div id="abc" style="background-color: black">
-            <nav>
-                <ul>
-                    <li><a href="/login-page">Log In/Register</a></li>
-                    <li><a href="/go-to-contact">Contact Us</a></li>
-                </ul>
+    <nav class="customNav">
+        <header class="text-gray-400 bg-gray-900 body-font">
+          <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
+              <a class="mr-5 hover:text-white" href="/login-page" id="homeBtn">Login/Register</a>
+              <a class="mr-5 hover:text-white" href="/go-to-contact" id="contactBtn">Contact Us</a>
             </nav>
-        </div>
-    <div class="spacer layer"></div>
+            <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-white lg:items-center lg:justify-center mb-4 md:mb-0">
+              <img alt="blog" src="/static/logo104x104.png" class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
+              <span class="ml-3 text-xl xl:block lg:hidden">AquaReWrite</span>
+            </a>
+            <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
+            </div>
+          </div>
+        </header>
+      </nav>
+    <div class="spacer layer flip"></div>
         <section class="ut">
             <div class="itemsBlob">
                 <h1>Why Choose Aqua?</h1>
-                <p class="custom">Aqua gives you the best blogs and articles about technology at the comfort of your place at just $0.33/month. <span class="text-red-300">With Aqua</span> you can post your ideas to the world adn also discuss it on the web. <span class="text-red-300">There's no reason to wait...</span> Just create an account below:</p><br>
-                <form action="/register">
+                <p class="custom">Aqua gives you the best blogs and articles about technology at the comfort of your place for free. <span class="text-red-300">With Aqua</span> you can post your ideas to the world adn also discuss it on the web. <span class="text-red-300">There's no reason to wait...</span> Just create an account below:</p><br>
+                <form action="/login-page">
                     <button class="register">Create an Aqua Account</button>
                 </form>
             </div>
@@ -31,7 +39,7 @@
         <div class="sep1">
             <h1>Get Started...</h1>
         </div>
-    <div class="spacer layer flip"></div>
+    <div class="spacer layer"></div>
     
     <script src="/static/script2.js"></script>
 </body>

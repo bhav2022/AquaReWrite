@@ -22,10 +22,8 @@
           <a class="mr-5 hover:text-white" href="/go-to-contact" id="contactBtn">Contact Us</a>
         </nav>
         <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-white lg:items-center lg:justify-center mb-4 md:mb-0">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-          </svg>
-          <span class="ml-3 text-xl xl:block lg:hidden">Aqua</span>
+          <img alt="blog" src="/static/logo104x104.png" class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
+          <span class="ml-3 text-xl xl:block lg:hidden">AquaReWrite</span>
         </a>
         <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
           <form action="/logout">
@@ -70,6 +68,37 @@
   <div>
     {% block content %}{% endblock %}
   </div>
+
+<footer class="bg-gray-50 dark:bg-gray-800">
+  <div class="p-4 py-6 mx-auto max-w-screen-xl md:p-8 lg:p-10">
+      <div class="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5">
+          <div>
+              <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+              <ul class="text-gray-500 dark:text-gray-400">
+                  <li class="mb-4">
+                      <a href="#" class="hover:underline">Privacy Policy</a>
+                  </li>
+              </ul>
+          </div>
+          <div>
+              <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Help Center</h2>
+              <ul class="text-gray-500 dark:text-gray-400">
+                  <li class="mb-4">
+                      <a href="#" class=" hover:underline">Contact Us</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+      <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8">
+      <div class="text-center">
+          <a href="#" class="flex justify-center items-center mb-5 text-2xl font-semibold text-gray-900 dark:text-white">
+            <img alt="blog" src="/static/logo104x104.png" class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center mr-1">
+              AquaReWrite
+          </a>
+      </div>
+  </div>
+  </footer>
+
   <script src="{% block script %}{% endblock %}"></script>
   <script src="{% block script1 %}{% endblock %}"></script>
 </body>
