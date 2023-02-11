@@ -14,12 +14,16 @@
   <title>{% block title %}Base{% endblock %}</title>  
 </head>
 <body class="{% block bodycolor %}{% endblock %}">
+
+  <!-- <div class="spinner"></div> -->
+
   <nav class="customNav">
     <header class="text-gray-400 bg-gray-900 body-font">
       <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
-          <a class="mr-5 hover:text-white" href="/go-to-home" id="homeBtn" onclick="homeSelect()">Home</a>
-          <a class="mr-5 hover:text-white" href="/go-to-contact" id="contactBtn">Contact Us</a>
+          <a class="mr-7 hover:text-white {% block home %}{% endblock %}" href="/go-to-home" id="homeBtn" onclick="homeSelect()">Home</a>
+          <a class="mr-7 hover:text-white {% block contact %}{% endblock %}" href="/go-to-contact" id="homeBtn">Contact Us</a>
+          <a class="mr-7 hover:text-white {% block story %}{% endblock %}" href="/posts/user-submission" id="contactBtn">Submit your own Story/Article</a>
         </nav>
         <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-white lg:items-center lg:justify-center mb-4 md:mb-0">
           <img alt="blog" src="/static/logo104x104.png" class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">

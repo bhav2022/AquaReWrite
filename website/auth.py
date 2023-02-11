@@ -6,7 +6,7 @@ from google.oauth2 import id_token
 from pip._vendor import cachecontrol
 import google.auth.transport.requests
 import requests
-from flask import Blueprint, render_template, request, flash, redirect, session, abort
+from flask import Blueprint, request, flash, redirect, session, abort, make_response
 from . import login_is_required, flow, GOOGLE_CLIENT_ID
 
 os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "1"
@@ -14,7 +14,7 @@ os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "1"
 auth = Blueprint('auth', __name__)
 
 
-@auth.route('/login-page', methods=['POST', 'GET'])
+@auth.route('/login-page/', methods=['POST', 'GET'])
 def login():
     autherization_url, state = flow.authorization_url()
     session["state"] = state
@@ -22,13 +22,14 @@ def login():
 
 
 @login_is_required
-@auth.route('/logout')
+@auth.route('/logout/')
 def logout():
     session.clear()
+    flash(f"Logout Successful. To remove the login history clear the cookie data from browser settings.", category="success")
     return redirect('/')
 
 
-@auth.route('/callback')
+@auth.route('/callback/')
 def callback():
     flow.fetch_token(authorization_response=request.url)
     if not session["state"] == request.args["state"]:

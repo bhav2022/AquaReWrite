@@ -9,12 +9,12 @@ os.environ["OAUTH_INSECURE_TRANSPORT"] = "1"
 
 
 @login_is_required
-@views.route('/go-to-home')
+@views.route('/go-to-home/')
 def go_to_home():
     return render_template('home.html', session=session)
 
 
-@views.route('/go-to-contact')
+@views.route('/go-to-contact/')
 def go_to_contact():
     return render_template('contact.html')
 
@@ -23,6 +23,6 @@ def go_to_contact():
 def intro():
     return render_template('intro.html')
 
-@views.route('/privacy')
+@views.route('/privacy/')
 def privacy():
     return send_file('static/Policies/AquaReWrite Privacy Policies.pdf')

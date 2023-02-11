@@ -1,4 +1,4 @@
-{% extends "base.html" %}{% block title %}Home{% endblock %}{% block bodycolor %}bg-indigo-400{% endblock %}{% block content %}
+{% extends "base.html" %}{% block title %}Home{% endblock %}{% block bodycolor %}bg-indigo-400{% endblock %}{% block home %}isActive{% endblock %}{% block content %}
 <p class="bg-gray-900 body-font overflow-hidden text-white p-7 rounded bg-gray-700 m-2 font-medium title-font text-2xl">TRENDING ON AQUA for <span class="text-indigo-400">{{ session["name"] }}</span></p>
 <section class="text-gray-400 bg-gray-900 body-font overflow-hidden">
   <div class="container px-5 py-24 mx-auto">
@@ -49,7 +49,7 @@
       </div>
     </div>
   </div>
-  <p class="mb-3 text-center text-2xl text-red-500">Want to write your own story to share with public on AquaReWrite? Email us at: <span class="font-bold font-mono"><a href="email">kbhavya960@gmail.com</a></span></p>
+  <p class="mb-3 text-center text-2xl text-red-500">Want to write your own story to share with public on AquaReWrite?<span class="font-bold font-mono"><a href="/posts/user-submission">Just Click Here</a></span></p>
 </section>
 <hr>
 <section class="text-gray-400 bg-gray-900 body-font">

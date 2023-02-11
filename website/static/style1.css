@@ -3,3 +3,11 @@
   top: 0;
   border-bottom: 2px solid red;
 }
+
+nav a.isActive{
+   background-color: rgba(134, 64, 255, 0.688);
+   padding: 0.7rem;
+   color: white;
+   border-radius: 10px;
+   font-weight: 700;
+}

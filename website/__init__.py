@@ -4,6 +4,12 @@ import pathlib
 from flask import Flask, session, abort
 from google_auth_oauthlib.flow import Flow
 
+ALLOWED_EXTENSIONS = set(['pdf', 'doc', 'docx'])
+
+def allowed_files(filename):
+    return '.' in filename and \
+        filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
 GOOGLE_CLIENT_ID = "554282819719-c1v34tmkuvkule51llbtfp8u99ikhoqj.apps.googleusercontent.com"
 client_secret_files = os.path.join(pathlib.Path(__file__).parent, "cred.json")
 
@@ -29,7 +35,7 @@ def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'wishlist'
     app.secret_key = 'wishlist'
-    app.config['app_name'] = 'AquaMainWeb'
+    app.config['app_name'] = 'AquaReWrite'
 
     from .views import views
     from .auth import auth
@@ -39,3 +45,4 @@ def create_app():
     app.register_blueprint(posts, url_prefix='/posts')
 
     return app
+
