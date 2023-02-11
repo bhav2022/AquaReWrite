@@ -20,8 +20,6 @@ def login():
     session["state"] = state
     return redirect(autherization_url)
 
-
-@login_is_required
 @auth.route('/logout/')
 def logout():
     session.clear()

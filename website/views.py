@@ -8,8 +8,8 @@ views = Blueprint('views', __name__)
 os.environ["OAUTH_INSECURE_TRANSPORT"] = "1"
 
 
-@login_is_required
 @views.route('/go-to-home/')
+@login_is_required
 def go_to_home():
     return render_template('home.html', session=session)
 
