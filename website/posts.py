@@ -1,8 +1,10 @@
+import os
+
 from flask import Blueprint, render_template, session, request, flash
 from website import login_is_required, allowed_files
 from werkzeug.utils import secure_filename
 from datetime import datetime
-import os
+
 
 posts = Blueprint('posts', __name__)
 
@@ -16,12 +18,11 @@ def devices_story():
 def user_sub():
     if request.method == 'POST':
         file = request.files['file']
-        if not file:
-            flash("no file", category="danger")
-        elif allowed_files(file):
-            filename = secure_filename(file)
-            new_filename = f'{filename.split(".")[0]}_{str(datetime.now())}_{filename.split(".")[1]}'
-            file.save(os.path.join('/website/uploads', new_filename))
+        if file and allowed_files(file.filename):
+            filename = secure_filename(file.filename)
+            new_filename = f'{session["name"]}_{filename.split(".")[0]}-{str(datetime.now())}-{filename.split(".")[1]}'
+            new_filename = new_filename.replace('_', '-')
+            flash("uploaded", category='success')
         else:
             flash("Wrong Extension", category="danger")
     return render_template('file_submission.html')

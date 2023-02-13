@@ -3,6 +3,10 @@ import pathlib
 
 from flask import Flask, session, abort
 from google_auth_oauthlib.flow import Flow
+import boto3
+
+s3 = boto3.client('s3', aws_access_key_id='AKIAVFABI55NJMN2BP7B', aws_secret_access_key='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')
+BUCKET_NAME = 'aqua-userfile-bucket'
 
 ALLOWED_EXTENSIONS = set(['pdf', 'doc', 'docx'])
 
